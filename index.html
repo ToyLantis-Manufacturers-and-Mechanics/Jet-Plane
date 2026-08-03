@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -109,6 +109,64 @@
             color: var(--text-secondary);
         }
 
+        .instructions-section {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            padding: 2.5rem;
+            margin-top: 3rem;
+            text-align: left;
+            width: 100%;
+            max-width: 700px;
+            box-sizing: border-box;
+        }
+
+        .instructions-section h3 {
+            color: var(--accent-gold);
+            margin-top: 0;
+            font-size: 1.4rem;
+        }
+
+        .instructions-section h4 {
+            color: var(--text-main);
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+            font-size: 1.1rem;
+        }
+
+        .instructions-section p, .instructions-section li {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            line-height: 1.5;
+        }
+
+        .instructions-section ol {
+            padding-left: 1.25rem;
+            margin-bottom: 1rem;
+        }
+
+        pre {
+            background-color: #0b0f19;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1rem;
+            border-radius: 8px;
+            overflow-x: auto;
+            color: #f8fafc;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 0.9rem;
+        }
+
+        code {
+            color: var(--accent-gold);
+        }
+
+        .note-text {
+            font-size: 0.85rem;
+            font-style: italic;
+            color: var(--text-secondary);
+            margin-top: 0.5rem;
+        }
+
         footer {
             text-align: center;
             padding: 2rem;
@@ -142,6 +200,30 @@
             <div class="os-badge">
                 Compatible with macOS &bull; Built by ToyLantis Manufacturers and Mechanics
             </div>
+        </div>
+
+        <div class="instructions-section">
+            <h3>📜 Installation & Setup Guide</h3>
+            <p>Because <em>Jet Plane</em> is independently crafted and distributed outside of the Apple App Store, modern versions of macOS (Gatekeeper) may occasionally show a security warning or a dramatic "is damaged and can't be opened" message upon a fresh download. This is simply a standard web-quarantine precaution and can be bypassed in seconds.</p>
+            <p>Please follow these quick instructions to get your flight airborne:</p>
+
+            <h4>Step 1: Download & Extract</h4>
+            <ol>
+                <li>Download the latest version of <strong>Jet Plane</strong> using the download button above.</li>
+                <li>Move <strong>Jet Plane.app</strong> into your <strong>Applications</strong> folder (or leave it safely on your Desktop).</li>
+            </ol>
+
+            <h4>Step 2: Clear the macOS Quarantine Flag (If Needed)</h4>
+            <p>If macOS displays a warning stating the app is "damaged" or cannot be opened because it's from an unidentified developer, open your <strong>Terminal</strong> app and run this simple command to clear the quarantine flag:</p>
+            
+            <pre><code>xattr -cr /Applications/Jet\ Plane.app</code></pre>
+            
+            <p class="note-text">(Note: If you placed your app on your Desktop instead, replace <code>/Applications/Jet\ Plane.app</code> with <code>~/Desktop/Jet\ Plane.app</code>, or simply type <code>xattr -cr </code> with a space, then drag and drop <strong>Jet Plane.app</strong> right into the Terminal window!)</p>
+
+            <h4>Step 3: Launch Jet Plane</h4>
+            <p>Once cleared, double-click <strong>Jet Plane.app</strong> normally, and your digital assistant will spring to life, ready for action!</p>
+            
+            <p style="margin-top: 1.5rem; color: var(--accent-gold); font-weight: 600;">Enjoy the flight! ✈️🛡️</p>
         </div>
     </div>
 
