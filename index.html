@@ -214,7 +214,8 @@
             <h3 style="margin-top: 0; color: var(--text-main);">Get Jet Plane for macOS</h3>
             <p style="font-size: 1rem; margin-bottom: 1.5rem;">Direct distribution. Zero middleman fees. Pure system defense.</p>
             
-            <a href="https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases/latest/download/JetPlane.app.zip" class="btn-download">Download for macOS (Free)</a>
+            <!-- Automated download link injected via script -->
+            <a href="https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases/latest" id="download-btn" class="btn-download">Download for macOS (Free)</a>
             
             <div class="os-badge">
                 Compatible with macOS &bull; Built by ToyLantis Manufacturers and Mechanics
@@ -249,5 +250,18 @@
     <footer>
         &copy; 2026 ToyLantis Manufacturers and Mechanics. All rights reserved.
     </footer>
+
+    <!-- Smart Automation Script to fetch the latest release asset dynamically -->
+    <script>
+        fetch('https://api.github.com/repos/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases/latest')
+            .then(response => response.json())
+            .then(data => {
+                const asset = data.assets.find(a => a.name === 'JetPlane.app.zip');
+                if (asset) {
+                    document.getElementById('download-btn').href = asset.browser_download_url;
+                }
+            })
+            .catch(err => console.error('Could not fetch latest release link', err));
+    </script>
 </body>
 </html>
