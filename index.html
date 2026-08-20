@@ -1,4 +1,4 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -40,6 +40,23 @@
             display: flex;
             align-items: center;
             gap: 10px;
+        }
+        
+        .org-link {
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s ease;
+        }
+
+        .org-link:hover {
+            color: var(--accent-gold);
+            background: rgba(245, 158, 11, 0.1);
+            border-color: var(--border-glow);
         }
 
         .hero {
@@ -182,8 +199,10 @@
         <div class="logo-area">
             🛡️ Jet Plane Security
         </div>
-        <div style="color: var(--text-secondary); font-size: 0.9rem;">
-            ToyLantis Manufacturers and Mechanics
+        <div>
+            <a href="https://github.com/ToyLantis-Manufacturers-and-Mechanics" target="_blank" class="org-link">
+                ToyLantis Manufacturers and Mechanics
+            </a>
         </div>
     </header>
 
@@ -195,7 +214,7 @@
             <h3 style="margin-top: 0; color: var(--text-main);">Get Jet Plane for macOS</h3>
             <p style="font-size: 1rem; margin-bottom: 1.5rem;">Direct distribution. Zero middleman fees. Pure system defense.</p>
             
-            <a href="JetPlane.app.zip" class="btn-download">Download for macOS (Free)</a>
+            <a href="https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases/latest" class="btn-download">Download for macOS (Free)</a>
             
             <div class="os-badge">
                 Compatible with macOS &bull; Built by ToyLantis Manufacturers and Mechanics
