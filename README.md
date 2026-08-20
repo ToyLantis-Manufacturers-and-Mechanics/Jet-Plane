@@ -2,7 +2,7 @@
 
 Jet Plane is a macOS security utility that scans and neutralizes malicious URLs and files, and provides a robust application uninstallation tool to remove unwanted or potentially harmful apps.
 
-[![License](https://img.shields.io/badge/license-MIT-blue.svg)]() [![Build](https://img.shields.io/badge/build-passing-brightgreen)]() [![Release](https://img.shields.io/badge/release-v0.0.0-lightgrey)]()
+[![Release](https://img.shields.io/github/v/release/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane?label=release)](https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases) [![License](https://img.shields.io/github/license/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane)](https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/blob/main/LICENSE)
 
 Table of Contents
 - [Features](#features)
@@ -11,6 +11,7 @@ Table of Contents
 - [Quick Start](#quick-start)
 - [Configuration](#configuration)
 - [How scanning works](#how-scanning-works)
+- [Engine behavior & persistence](#engine-behavior--persistence)
 - [Uninstallation tool](#uninstallation-tool)
 - [Permissions & Privacy](#permissions--privacy)
 - [Troubleshooting](#troubleshooting)
@@ -27,6 +28,13 @@ Table of Contents
 - App uninstallation: deep uninstall tool that removes application files, launch agents/daemons, preferences, and containers.
 - Configurable actions: per-threat decision (quarantine, delete, ignore), and logging.
 - Lightweight macOS-native UI and an optional CLI interface for automation.
+- Web defense (scanWebsite): a dedicated scanWebsite() routine inspects and neutralizes malicious URLs and remote threats before they reach the user's environment.
+- Global persistence & protection: the engine hooks into application lifecycle events to intercept global quit requests and prevent accidental or malicious shutdowns of core defenses.
+- Onboarding & permissions: a polished onboarding sequence requests required permissions (including Full Disk Access) in a clear, privacy-forward flow so the engine can scan effectively.
+- Multi-tier scanning: Quick Scan (caches & apps), Deep Scan (user Home directory), and Maximum Sweep (root-level) options to balance speed, coverage, and privacy.
+- Update & telemetry controls: configurable updateFrequency (Every Launch / Daily / Weekly) with optional opt-in remote checks and clear privacy controls.
+- Smart uninstaller: a residue-conquering uninstaller that locates and removes system-level and user-level leftovers (caches, preferences, containers, launch items).
+- System optimizer: performance safeguards and throttling so scanning and background operations remain efficient on supported macOS versions.
 
 ## Requirements
 - Minimum: macOS Monterey 12.0 (12.x).
@@ -95,21 +103,30 @@ Configuration can be edited from Preferences or via the config file in the user 
 - File scanning: signature-based matching plus optional heuristic/static analysis. Any third-party engines or signature sources used are disclosed in the app or documentation.
 - Neutralization: suspected files are moved to a quarantine directory and may be removed only after user confirmation. Recovery steps are available in the app.
 
-## Uninstallation tool
-Jet Plane's deep-uninstall removes both system-wide and user-specific artifacts. Behavior:
-- System (/Library) removals (require admin):
+## Engine behavior & persistence
+- scanWebsite(): inspects URLs before they’re opened using local signatures and optional remote blocklist lookup. Configurable caching and privacy controls are available.
+- Application lifecycle protection: the engine intercepts global quit events to avoid accidental shutdown; critical services can be restarted automatically if terminated unexpectedly.
+- Onboarding: the first-run flow requests permission dialogs (network access, Full Disk Access) in a step-by-step UI and explains what each permission is used for.
+- Automatic recovery: critical background services monitor themselves and will attempt to restart or notify the user if halted.
+
+## Uninstallation tool (Residue-Conquering Uninstaller)
+Jet Plane’s uninstaller is designed to remove both visible and hidden residues:
+
+- System-level removals (admin required)
   - /Library/Application Support/<app-related>
   - /Library/LaunchAgents/<...>
   - /Library/LaunchDaemons/<...>
-  - Other system-level files created by the app
-- User (~/Library) removals:
+  - System-level caches, receipts, and support files created by the app
+
+- User-level removals
   - ~/Library/Preferences/<app-related>.plist (preferences)
   - ~/Library/Containers/<app-related> (app containers)
   - ~/Library/Application Support/<user-specific files>
+  - ~/Library/Caches/<app-related>
 
-Example UI flow: App → Uninstall → choose app → Jet Plane lists files to delete → confirm.
-
-CLI uninstall (example — no bundle identifier required in README):
+- CLI and UI modes
+  - UI flow: App → Uninstall → choose app → Jet Plane lists files with checkboxes → confirm (dry-run option available)
+  - CLI example:
 
 ```
 sudo /usr/local/bin/jetplane uninstall --app "Jet Plane" --dry-run
