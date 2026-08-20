@@ -111,9 +111,9 @@ Caution: System-level removals modify /Library and require administrator confirm
 - Provide a privacy policy link if user data is collected or transmitted.
 
 ## Troubleshooting
-- If scanning fails: Check Preferences → Logs for details.
-- Quarantine recovery: Open Jet Plane → Quarantine → Select file → Restore.
-- If uninstall fails: use the app's dry-run option and inspect logs.
+- If scanning doesn't work: ensure Jet Plane has Full Disk Access (System Settings → Privacy & Security → Full Disk Access) and that the macOS quarantine flag has been cleared for the app (run `xattr -cr /Applications/Jet\ Plane.app` if applicable).
+- There is no quarantine recovery feature in this version; quarantined files are handled according to system policies or the configured quarantine directory (if enabled).
+- If uninstall fails: make sure the uninstaller is run with administrator privileges or that you provided admin credentials when prompted.
 
 ## Contributing
 Contributions, bug reports, and feature requests are welcome. Please open issues or pull requests following the repository's contribution guidelines (see CONTRIBUTING.md).
