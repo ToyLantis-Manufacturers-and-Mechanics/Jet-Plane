@@ -8,8 +8,6 @@ Table of Contents
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Quick Start](#quick-start)
-- [Configuration](#configuration)
 - [How scanning works](#how-scanning-works)
 - [Engine behavior & persistence](#engine-behavior--persistence)
 - [Uninstallation tool](#uninstallation-tool)
@@ -70,33 +68,6 @@ After clearing the quarantine flag (if needed), double-click Jet Plane.app to op
 Notes
 - Some operations (system-level uninstall, removing LaunchDaemons/LaunchAgents) require administrator approval.
 - Use the app's dry-run or quarantine options before performing destructive removals.
-
-## Quick Start
-1. Launch Jet Plane from Applications.
-2. Go to Settings → Scanning and enable Real-time URL scanning.
-3. To scan a file: File → Scan file… or right-click → Services → Scan with Jet Plane.
-4. CLI example (if applicable):
-
-```
-/usr/local/bin/jetplane scan --file ~/Downloads/suspicious.zip --quarantine
-```
-
-## Configuration
-Example config (YAML)
-
-```
-scan:
-  realtime_url: true
-  realtime_file: true
-  quarantine_path: ~/JetPlane/Quarantine
-actions:
-  on_malware: quarantine
-  on_pua: prompt
-logging:
-  level: info
-```
-
-Configuration can be edited from Preferences or via the config file in the user configuration directory.
 
 ## How scanning works
 - URL scanning: Jet Plane checks URLs against local signatures and an optional remote blocklist (if enabled). Caching and privacy options are available for remote lookups.
