@@ -141,4 +141,4 @@ This project is licensed under the MIT License — see the LICENSE file for deta
 - Thank contributors and testers.
 
 ## Changelog
-See CHANGELOG.md for release notes and version history.
+See the Releases page for release notes and version history: https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases
