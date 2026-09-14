@@ -44,7 +44,7 @@ Table of Contents
 - Administrator privileges are required for system-level uninstall operations.
 
 ## Installation
-Official releases are distributed from the Releases page as signed installers (DMG or PKG). Follow the instructions on each release for installation.
+Official releases are distributed from the Releases page as signed installers (.zip's). Follow the instructions on each release for installation.
 
 ### Installation & Setup Guide
 Because Jet Plane is distributed outside the Apple App Store, modern macOS Gatekeeper may occasionally show a security warning. Follow these steps to install and launch safely.
