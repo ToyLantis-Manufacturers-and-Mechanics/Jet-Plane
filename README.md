@@ -2,10 +2,11 @@
 
 Jet Plane is a macOS security utility that scans and neutralizes malicious URLs and files, and provides a robust application uninstallation tool to remove unwanted or potentially harmful apps.
 
-[![Release](https://img.shields.io/github/v/release/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane?label=release)](https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases) [![License](https://img.shields.io/github/license/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane)](https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/blob/main/LICENSE)
+[![Release](https://img.shields.io/github/v/release/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane?label=release)](https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases) [![License](https://img.shields.io/github/license/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane)](LICENSE)
 
 Table of Contents
 - [Features](#features)
+- [Data Privacy (Version 4)](#data-privacy-version-4)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [How scanning works](#how-scanning-works)
@@ -33,6 +34,9 @@ Table of Contents
 - Update & telemetry controls: configurable updateFrequency (Every Launch / Daily / Weekly) with optional opt-in remote checks and clear privacy controls.
 - Smart uninstaller: a residue-conquering uninstaller that locates and removes system-level and user-level leftovers (caches, preferences, containers, launch items).
 - System optimizer: performance safeguards and throttling so scanning and background operations remain efficient on supported macOS versions.
+
+## Data Privacy (Version 4)
+**In Jet Plane Version 4 and later, no user personal data is transmitted to the Jet Plane AI or any third-party AI service.** All scanning, analysis, and processing is performed locally on your device, ensuring your privacy and security.
 
 ## Requirements
 - Minimum: macOS Monterey 12.0 (12.x).
@@ -63,7 +67,7 @@ xattr -cr ~/Desktop/Jet\ Plane.app
 ```
 
 Step 3 — Launch Jet Plane
-After clearing the quarantine flag (if needed), double-click Jet Plane.app to open it. If you see a Gatekeeper warning when first opening the app, open it via Finder → right-click → Open and confirm.
+After clearing the quarantine flag (if needed), double-click Jet Plane.app to open it. If you see a Gatekeeper warning when first opening the app, open it via Finder → right-click → Open and click "Open" in the confirmation dialog.
 
 Notes
 - Some operations (system-level uninstall, removing LaunchDaemons/LaunchAgents) require administrator approval.
@@ -75,13 +79,13 @@ Notes
 - Neutralization: suspected files are moved to a quarantine directory and may be removed only after user confirmation. Recovery steps are available in the app.
 
 ## Engine behavior & persistence
-- scanWebsite(): inspects URLs before they’re opened using local signatures and optional remote blocklist lookup. Configurable caching and privacy controls are available.
+- scanWebsite(): inspects URLs before they're opened using local signatures and optional remote blocklist lookup. Configurable caching and privacy controls are available.
 - Application lifecycle protection: the engine intercepts global quit events to avoid accidental shutdown; critical services can be restarted automatically if terminated unexpectedly.
 - Onboarding: the first-run flow requests permission dialogs (network access, Full Disk Access) in a step-by-step UI and explains what each permission is used for.
 - Automatic recovery: critical background services monitor themselves and will attempt to restart or notify the user if halted.
 
 ## Uninstallation tool (Residue-Conquering Uninstaller)
-Jet Plane’s uninstaller is designed to remove both visible and hidden residues:
+Jet Plane's uninstaller is designed to remove both visible and hidden residues:
 
 - System-level removals (admin required)
   - /Library/Application Support/<app-related>
@@ -111,7 +115,7 @@ Caution: System-level removals modify /Library and require administrator confirm
 - Provide a privacy policy link if user data is collected or transmitted.
 
 ## Troubleshooting
-- If scanning doesn't work: ensure Jet Plane has Full Disk Access (System Settings → Privacy & Security → Full Disk Access) and that the macOS quarantine flag has been cleared for the app (run `xattr -cr /Applications/Jet\ Plane.app` if applicable).
+- If scanning doesn't work: ensure Jet Plane has Full Disk Access (System Settings → Privacy & Security → Full Disk Access) and that the macOS quarantine flag has been cleared for the app (run the command above).
 - There is no quarantine recovery feature in this version; quarantined files are handled according to system policies or the configured quarantine directory (if enabled).
 - If uninstall fails: make sure the uninstaller is run with administrator privileges or that you provided admin credentials when prompted.
 
@@ -123,7 +127,7 @@ If you discover a vulnerability, please DO NOT post exploit details in a public 
 
 https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/security/advisories
 
-If you cannot access Security Advisories, open a new issue titled "SECURITY: <short summary>" and we will follow up privately. Do not include exploit code, credentials, or other sensitive data in a public issue.
+If you cannot access Security Advisories, open a new issue titled "SECURITY: <short summary>" and we will follow up privately. Do not include exploit code, credentials, or other sensitive data in the issue body.
 
 Include in your report:
 - A short description of the issue
