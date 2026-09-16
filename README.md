@@ -6,7 +6,7 @@ Jet Plane is a macOS security utility that scans and neutralizes malicious URLs 
 
 Table of Contents
 - [Features](#features)
-- [Data Privacy (Version 4)](#data-privacy-version-4)
+- [Data Privacy Version 4+](#data-privacy-version-4)
 - [Requirements](#requirements)
 - [Installation](#installation)
 - [How scanning works](#how-scanning-works)
