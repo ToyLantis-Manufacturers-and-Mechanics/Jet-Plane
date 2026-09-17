@@ -2,7 +2,7 @@
 
 Jet Plane is a macOS security utility that scans and neutralizes malicious URLs and files, and provides a robust application uninstallation tool to remove unwanted or potentially harmful apps.
 
-[![Release](https://img.shields.io/github/v/release/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane?label=release)](https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases) [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane?label=release)](https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases) [![License](https://img.shields.io/github/license/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane)](LICENSE)
 
 ## Table of Contents
 - [Features](#features)
