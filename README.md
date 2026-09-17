@@ -98,15 +98,7 @@ Jet Plane's uninstaller is designed to remove both visible and hidden residues:
   - ~/Library/Containers/<app-related> (app containers)
   - ~/Library/Application Support/<user-specific files>
   - ~/Library/Caches/<app-related>
-
-- CLI and UI modes
-  - UI flow: App → Uninstall → choose app → Jet Plane lists files with checkboxes → confirm (dry-run option available)
-  - CLI example:
-
-```
-sudo /usr/local/bin/jetplane uninstall --app "Jet Plane" --dry-run
-```
-
+  
 Caution: System-level removals modify /Library and require administrator confirmation. Use the dry-run or quarantine options before destructive actions.
 
 ## Permissions & Privacy
