@@ -2,7 +2,7 @@
 
 Jet Plane is a macOS security utility that scans and neutralizes malicious URLs and files, and provides a robust application uninstallation tool to remove unwanted or potentially harmful apps.
 
-[![Release](https://img.shields.io/github/v/release/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane?label=release)](https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases) [![License](https://img.shields.io/github/license/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane)](LICENSE)
+[![Release](https://img.shields.io/github/v/release/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane?label=release)](https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases) [![License: Proprietary](https://img.shields.io/badge/License-Proprietary-red.svg)](LICENSE)
 
 ## Table of Contents
 - [Features](#features)
@@ -36,7 +36,7 @@ Jet Plane is a macOS security utility that scans and neutralizes malicious URLs 
 - System optimizer: performance safeguards and throttling so scanning and background operations remain efficient on supported macOS versions.
 
 ## Data Privacy (Version 4)
-**In Jet Plane Version 4 and later, no user personal data is transmitted to the Jet Plane AI or any third-party AI service.** All scanning, analysis, and processing is performed locally on your device.
+**In Jet Plane Version 4 and later, no user personal data is transmitted to the Jet Plane AI or any third-party AI service.** All scanning, analysis, and processing is performed locally on your device, ensuring your privacy and security.
 
 ## Requirements
 - Minimum: macOS Monterey 12.0 (12.x).
@@ -67,7 +67,7 @@ xattr -cr ~/Desktop/Jet\ Plane.app
 ```
 
 **Step 3 — Launch Jet Plane**
-After clearing the quarantine flag (if needed), double-click Jet Plane.app to open it. If you see a Gatekeeper warning when first opening the app, open it via Finder → right-click → Open and click Open.
+After clearing the quarantine flag (if needed), double-click Jet Plane.app to open it. If you see a Gatekeeper warning when first opening the app, open it via Finder → right-click → Open and click continue.
 
 **Notes**
 - Some operations (system-level uninstall, removing LaunchDaemons/LaunchAgents) require administrator approval.
@@ -107,8 +107,8 @@ Caution: System-level removals modify /Library and require administrator confirm
 - Provide a privacy policy link if user data is collected or transmitted.
 
 ## Troubleshooting
-- If scanning doesn't work: ensure Jet Plane has Full Disk Access (System Settings → Privacy & Security → Full Disk Access) and that the macOS quarantine flag has been cleared for the app (run the `xattr -cr` command described above).
-- **Quarantine availability:** Jet Plane Version 4.0 and later includes quarantine functionality. Versions before 4.0 do not include quarantine. If Jet Plane scans and incorrectly identifies one of your own files as malware, you can recover it from the **Quarantine** tab in the app in Version 4.0 and later. If quarantine is not working in Version 4.0 or later, verify that the app has the required permissions and that the configured quarantine directory is available.
+- If scanning doesn't work: ensure Jet Plane has Full Disk Access (System Settings → Privacy & Security → Full Disk Access) and that the macOS quarantine flag has been cleared for the app.
+- **Quarantine availability:** Jet Plane Version 4.0 and later includes quarantine functionality. Versions before 4.0 do not include quarantine. If Jet Plane scans and incorrectly identifies one of your files, use the quarantine or ignore options before deleting anything.
 - If uninstall fails: make sure the uninstaller is run with administrator privileges or that you provided admin credentials when prompted.
 
 ## Contributing
@@ -130,7 +130,7 @@ Include in your report:
 We will acknowledge incoming reports via the Security Advisory or issue thread; please allow up to 5 business days for a response.
 
 ## License
-This project is licensed under the MIT License — see the LICENSE file for details.
+Jet Plane is proprietary software. All rights are reserved by ToyLantis-Manufacturers-and-Mechanics. This project may not be copied, modified, distributed, sublicensed, sold, or reverse engineered without the prior express written permission of the copyright holder. See the [LICENSE](LICENSE) file for the full proprietary license terms.
 
 ## Acknowledgements
 - List libraries, tools, or signature providers you used.
@@ -138,3 +138,4 @@ This project is licensed under the MIT License — see the LICENSE file for deta
 
 ## Changelog
 See the Releases page for release notes and version history: https://github.com/ToyLantis-Manufacturers-and-Mechanics/Jet-Plane/releases
+
