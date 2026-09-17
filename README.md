@@ -108,7 +108,7 @@ Caution: System-level removals modify /Library and require administrator confirm
 
 ## Troubleshooting
 - If scanning doesn't work: ensure Jet Plane has Full Disk Access (System Settings → Privacy & Security → Full Disk Access) and that the macOS quarantine flag has been cleared for the app (run the `xattr -cr` command described above).
-- **Quarantine availability:** Jet Plane Version 4.0 and later includes quarantine functionality. Versions before 4.0 do not include quarantine. If you are using Version 4.0 or later and quarantine is not working, verify that the app has the required permissions and that the configured quarantine directory is available.
+- **Quarantine availability:** Jet Plane Version 4.0 and later includes quarantine functionality. Versions before 4.0 do not include quarantine. If Jet Plane scans and incorrectly identifies one of your own files as malware, you can recover it from the **Quarantine** tab in the app in Version 4.0 and later. If quarantine is not working in Version 4.0 or later, verify that the app has the required permissions and that the configured quarantine directory is available.
 - If uninstall fails: make sure the uninstaller is run with administrator privileges or that you provided admin credentials when prompted.
 
 ## Contributing
